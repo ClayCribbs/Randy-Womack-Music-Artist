@@ -1,0 +1,51 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.col-xs-4 {
+}
+
+.four-hundred {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 400px;
+}
+.six-hundred {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 600px;
+}
+.three-hundred {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 300px;
+}
+
+.full {
+	margin-left: 0 !important;
+	margin-top: 0 !important;
+	padding: 0 !important;
+}
+
+.carousel-indicators li { visibility: hidden; }
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important;
+}
+
+#box4 {
+  -webkit-animation-delay: 1s;
+}
+#box5 {
+  -webkit-animation-delay: 1s;
+}
+#box6 {
+  -webkit-animation-delay: 1s;
+}
+
+.box {
+    display: none;
+    height:300px;
+    width:300px;
+}
