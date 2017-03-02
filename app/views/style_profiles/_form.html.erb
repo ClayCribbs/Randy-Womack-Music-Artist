@@ -1,0 +1,39 @@
+<%= form_for(style_profile) do |f| %>
+  <% if style_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(style_profile.errors.count, "error") %> prohibited this style_profile from being saved:</h2>
+
+      <ul>
+      <% style_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field-group">
+    <%= f.select :col_width, options_for_select((1..12).to_a.map{|s| [s, s]})%>
+  </div>
+
+  <div class="field-group">
+    <%= f.select :col_type do %>
+      <%= [["Extra Small","xs"],["Small","sm"],["Medium","md"],["Large","lg"],["X-Large","xl"]].each do |c| %>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="field-group">
+    <%= f.label :col_height %>
+    <%= f.number_field :col_height %>
+  </div>
+
+  <div class="field-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

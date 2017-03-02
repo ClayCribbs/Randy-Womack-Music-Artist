@@ -1,0 +1,1 @@
+json.partial! "style_profiles/style_profile", style_profile: @style_profile

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Col width:</strong>
+  <%= @style_profile.col_width %>
+</p>
+
+<p>
+  <strong>Col type:</strong>
+  <%= @style_profile.col_type %>
+</p>
+
+<p>
+  <strong>Col height:</strong>
+  <%= @style_profile.col_height %>
+</p>
+
+<%= link_to 'Edit', edit_style_profile_path(@style_profile) %> |
+<%= link_to 'Back', style_profiles_path %>

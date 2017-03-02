@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  col_width: 1
+  col_type: MyString
+  col_height: 1
+
+two:
+  col_width: 1
+  col_type: MyString
+  col_height: 1

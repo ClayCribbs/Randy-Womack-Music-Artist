@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Style Profiles</h1>
+
+  <%= link_to 'Content', contents_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Col width</th>
+      <th>Col type</th>
+      <th>Col height</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @style_profiles.each do |style_profile| %>
+      <tr>
+        <td><%= style_profile.col_width %></td>
+        <td><%= style_profile.col_type %></td>
+        <td><%= style_profile.col_height %></td>
+        <td><%= link_to 'Show', style_profile %></td>
+        <td><%= link_to 'Edit', edit_style_profile_path(style_profile) %></td>
+        <td><%= link_to 'Destroy', style_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Style Profile', new_style_profile_path %>

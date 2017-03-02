@@ -8,6 +8,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 group :production do
   gem 'pg'
 end

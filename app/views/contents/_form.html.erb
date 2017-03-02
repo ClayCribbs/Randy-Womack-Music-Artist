@@ -1,0 +1,43 @@
+<%= form_for(content) do |f| %>
+  <% if content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content_type %>
+    <%= f.text_field :content_type %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select :style_profile_id, StyleProfile.all, :id, :name, prompt: true %>
+  </div>
+
+  <%= link_to 'Styles', style_profiles_path %>
+  
+  <div class="field">
+    <%= f.label :content_background %>
+    <%= f.text_field :content_background %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content_special %>
+    <%= f.text_field :content_special %>
+  </div>
+
+  <div class="field">
+  <%= f.label :pictures %>
+  <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

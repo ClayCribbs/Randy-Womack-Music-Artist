@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @content.content_type %>
+</p>
+
+<p>
+  <strong>Content background:</strong>
+  <%= @content.content_background %>
+</p>
+
+<p>
+  <strong>Content special:</strong>
+  <%= @content.content_special %>
+</p>
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>
+
+
+<% if @content.content_type == "carousel" %>
+	<div id="myCarousel" class="carousel" data-interval="false" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	  </ol>
+	  <% @style = StyleProfile.find(@content.style_profile_id) %>
+	  <div class="row"%>">
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+			    <% @content.pictures.each do |pic| %>
+				    <div class="col-sm-<%=@style.col_width%>" style="height: <%="#{@style.col_height}px;"%>">
+				    	<%=image_tag pic.url, :class => 'fit' %>
+				    </div>
+				  <%end%>
+		    </div>
+		  </div>
+	  </div>
+
+	</div>
+<% end %>

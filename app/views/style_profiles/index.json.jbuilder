@@ -1,0 +1,1 @@
+json.array! @style_profiles, partial: 'style_profiles/style_profile', as: :style_profile
